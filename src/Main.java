@@ -1,9 +1,9 @@
 public class Main {
     public static void main(String[] args) {
         LogicalOp op = new LogicalOp();
+        int[] myEmptyArray = new int [10];
         String[] myArrayOfNames = {"Daniel", "Simina", "Antim", "Gruia", "Liza"};
         int[] myValues = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20};
-        String[] myNeuronalMap = {"- "};
         op.printArray(op.listArrayOfValues(100));
         System.out.println();
         System.out.println(op.getAverageFromArray( op.printArray(op.listArrayOfValues(100))));
@@ -16,7 +16,12 @@ public class Main {
             System.out.println("valoarea se afla pe pozitia " + position);
         }
 
-        System.out.print(op.printGrill());
+        op.neuronalMapping();
+        op.removeNrFromArray(myValues, 8);
+        System.out.println(op.getSecondSmallestNrInArray(myValues));
+        System.out.println(op.copyArray(myValues, myEmptyArray));
+
+
 
         Calculator obj = new Calculator();
         obj.sum ( 30,90);

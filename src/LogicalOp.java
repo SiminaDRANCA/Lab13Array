@@ -96,33 +96,88 @@ tip String. Metoda sa verifice daca valoarea string-ului primit se regaseste in 
 
 - - - - - - - - - -*/
 
-    public String[] printGrill(String[10] {
-         for(int i = 0; i < 10; i++)
-        {
-            for(int j = 0; j < 10; j++)
-            {
-                System.out.print("- ");
-            }
-            System.out.println();
-        }
-    return printGrill();
+    public void neuronalMapping() {
 
+        char[] line = {'-', '-', '-', '-', '-', '-', '-', '-', '-', '-',};
+        for (int i = 0; i <= 10; i++) {
+
+            System.out.println(line);
+
+        }
     }
-            }
+
 
 
 
 
 /*8. Creati o metoda care sa primeasca un parametru de tip array de numere, populat cu valori, si un parametru
 de tip numar. Metoda sa verifice daca numarul exista in array, si daca da, sa returneze array-ul primit, fara acel numar.
- Apelati metoda in main() pentru a verifica daca functioneaza.
+ Apelati metoda in main() pentru a verifica daca functioneaza.*/
 
-9. Creati o metoda care sa primeasca un array, si sa returneze al doilea cel mai mic numar din array. Apelati metoda in
- main() pentru a verifica daca functioneaza.
+    public int[] removeNrFromArray(int[] myArray, int nr) {
 
-10. Creati o metoda care sa primeasca doi parametrii: un array populat cu valori, si un array gol.
+        int[] secondArray = new int[myArray.length];
+
+        int j = 0;
+
+        for (int i = 0; i < myArray.length; i++) {
+
+            if (myArray[i] == nr)
+
+                continue;
+
+            secondArray[j++] = myArray[i];
+
+        }
+
+        int[] finArray = new int[j];
+
+
+        for (int i = 0; i < j; i++)
+
+            finArray[i] = secondArray[i];
+
+        return finArray;
+
+    }
+    /* 9. Creati o metoda care sa primeasca un array, si sa returneze al doilea cel mai mic numar din array. Apelati
+    metoda in main() pentru a verifica daca functioneaza. */
+
+    public int getSecondSmallestNrInArray(int[] myArray) {
+
+
+        int temporary = 0;
+        for (int i = 0; i < myArray.length; i++) {
+            for (int j = i + 1; j < myArray.length; j++) {
+                if (myArray[i] > myArray[j]) {
+                    temporary = myArray[j];
+                    myArray[j] = myArray[i];
+                    myArray[i] = temporary;
+                }
+            }
+        }
+        return myArray[1];
+    }
+
+
+/* 10. Creati o metoda care sa primeasca doi parametrii: un array populat cu valori, si un array gol.
  Metoda sa copieze toate valorile din primul array, parcurgandu-l, in cel de-al doilea. Apelati metoda in main()
   pentru a verifica daca functioneaza.
 */
+public int[] copyArray(int[] firstArray, int[] emptyArray) {
 
 
+
+    for (int i = 0, j = 0; i < firstArray.length; i++) {
+
+        emptyArray[j] = firstArray[i];
+
+        j++;
+
+    }
+
+    return emptyArray;
+
+}
+
+}
